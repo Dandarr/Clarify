@@ -1,0 +1,15 @@
+Basic Plan
+------------------------------------------------------------------------------
+
+
+put all html element types into array
+
+aquires font of choice (i could add a selection process here)
+
+selects class of each element in loop and
+    checks if empty 
+        if so skip
+
+        if not
+            replace content font with chosen font
+        
