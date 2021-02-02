@@ -1,20 +1,12 @@
-const type = new Array('textarea','input','div','h1','h2','h3','span','p','li','a');
+window.addEventListener('DOMContentLoaded', init);
 
-const selectElement = document.querySelector('.typeDrop');
+function init() {    
+    function textChange() {
+        console.log("Button clicked");
+        alert("It works!");
+    }
 
-selectElement.addEventListener('change', (event) => { 
-  let stylePoint  = document.createElement ('style');
-  switch (selectElement) {
-    case 'Comic Neue':
-      console.log('changing font to comic neue');
-      stylePoint.textContent = WebFont.load({
-        google: {families: ['Comic Neue', 'cursive']}});
-      break;
-    case 'Dyslexi':
-      console.log('changing font to dyslexi');
-      break;
-    case 'Arial':
-      console.log('changing font to arial');
-      break;
-  }
-});
+    var submit = document.getElementById('send');
+    submit.addEventListener('click', textChange);
+    console.log("Loaded");
+}
