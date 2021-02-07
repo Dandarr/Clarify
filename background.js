@@ -1,6 +1,10 @@
 window.addEventListener('DOMContentLoaded', init);
 
-function init() {    
+function init() {
+    var types = new Array("textarea","input","div","h1","h2","h3","span","p","li","a");    
+    var styleNode           = document.createElement ("style");
+    styleNode.type          = "text/css";
+
     function textChange() {
         console.log("Button clicked");
         alert("It works!");
@@ -16,7 +20,6 @@ function init() {
                 console.log('changing font to dyslexi');
             }
         }
-
 
     var submit = document.getElementById('send');
     submit.addEventListener('click', textChange);
