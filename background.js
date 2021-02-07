@@ -2,12 +2,14 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
     var types = new Array("textarea","input","div","h1","h2","h3","span","p","li","a");    
-    var styleNode           = document.createElement ("style");
-    styleNode.type          = "text/css";
+    var stylePoint           = document.createElement ("style");
+    document.head.appendChild (stylePoint);
 
     function textChange() {
+        var textSel = document.getElementById('typeSelect');
+        var textVal = textSel.value;
+        console.log(textVal);
         console.log("Button clicked");
-        alert("It works!");
             if (textVal == "0"){
                 console.log('changing font to arial');
             }
@@ -19,12 +21,16 @@ function init() {
             else if (textVal == "2"){
                 console.log('changing font to dyslexi');
             }
+
+            else{
+                console.log("unable to specify font selection")
+            }
         }
 
     var submit = document.getElementById('send');
     submit.addEventListener('click', textChange);
     console.log("Loaded");
 
-    var textSel = document.getElementById('typeSelect');
-    var textVal = textSel.value;
+
+
     }
