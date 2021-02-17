@@ -6,7 +6,12 @@ Automatically formats webpages to become more dyslexia friendly. It does this by
 
 # Goals/ToDo
 
-* text change to a font of choice
+* text change to a font of choice (from a predefined list)
 * choice between preset backgrounds and text colours
 * text size and spacing sliders
 * text to speach functionailty
+* savable profiles for user settings
+* a selection of premade profiles
+* a quick enable/disable button to turn the extension on/off
+
+
