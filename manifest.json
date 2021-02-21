@@ -19,7 +19,16 @@
         "32": "images/icon_32.png",
         "48": "images/icon_64.png",
         "128": "images/icon_128.png"
-    }
+    },
+    "web_accessible_resources": [
+        "style.css",
+        "fonts/*.*"
+      ],
+    "content_scripts": [ {
+        "js": ["background.js" ],
+        "matches": [ "http://*/", "https://*/", "https://*/*", "http://*/*" ],
+        "css": ["style.css"]
+    }]
 }
 
 

@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      button {
-        height: 45px;
-        width: 90px;
-        outline: none;
-      }
-
-      .typeDrop{
-        outline: none;
-      }
-      
-    </style>
+    <style src="style.css"></style>
   </head>
   <body>
-    <button id='send'>submit</button>
+    <div>
+      <input type="checkbox" id="powerID" name="powerName"
+             checked>
+      <label for="powerID">Enabled/Disable</label>
+    </div>
     <select name="typeface" id="typeSelect" class="typeDrop">
-      <option value="0">Arial</option>
-      <option value="1">Comic Neue</option>
-      <option value="2">Dyslexi</option>
+      <option value="0">Roboto</option>
+      <option value="1">Port Lligat Sans</option>
+      <option value="2">Abel</option>
     </select>
+    <button id='send'>submit</button>
     <p id="testThis">Test!</p>
     
   </body>
   <script src="background.js"></script>
 </html>
+
+
