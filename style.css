@@ -1,0 +1,53 @@
+.roboto{
+    font-family: "Roboto" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+  }
+  
+a .roboto{
+    font-family: "Roboto" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
+
+.abel{
+    font-family: "abel" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
+
+a .abel{
+    font-family: "abel" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
+
+.portLilgat{
+    font-family: "portLilgat" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
+
+a .portLilgat{
+    font-family: "portLilgat" !important;
+    text-align: left !important;
+    color: #575757 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
