@@ -13,7 +13,7 @@ function init() {
         var textVal = textSel.value;
         console.log(textVal);
         console.log("Button clicked");
-        
+
             if (textVal == "0"){
                 console.log(textVal);
                 console.log('changing font to Roboto');
@@ -55,11 +55,11 @@ function init() {
         function addClass(textDecision) {
             for(var i=0;i<types.length;i++){
               var node = document.getElementsByTagName(types[i]);
-              for(var y=0;y<node.length;y++){
+              for(var p=0;p<node.length;p++){
                 // this make sure that there is text in the element first
-                if (node[y].textContent){
+                if (node[p].textContent){
                   // this adds the class to the matching elements for font style based off textDecision
-                  node[y].classList.add(textDecision);
+                  node[p].classList.add(textDecision);
                 }
               }
             }
