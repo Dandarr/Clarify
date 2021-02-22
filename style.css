@@ -51,3 +51,27 @@ a .portLilgat{
     font-size: small;
     background-color: #F1F1F1 !important;
 }
+
+#preset1{
+background-color: bisque;
+margin: 10%;
+}
+
+#preset2{
+background-color: black;
+margin: 10%;
+}
+
+#preset3{
+background-color: lightsteelblue;
+margin: 10%;
+}
+
+#preset4{
+background-color: mintcream;
+margin: 10%;
+}
+
+#preset5{
+margin: 10%;
+}
