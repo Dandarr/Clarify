@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', main);
-window.addEventListener('DOMContentLoaded', changeCSS);
+window.addEventListener('DOMContentLoaded', changeCSS());
+
 
 // gets the document url of the currently active chrome tab
 var currentTab;
@@ -21,6 +22,8 @@ function main() {
     // style.type = "text/css";
     // dont need to add the .type as it is redundant since style only has one type
 */
+
+//this is definitley working
     function textReplace(){
         //figures out what option is selected
         var textSel = document.getElementById('typeSelect'); 
@@ -55,6 +58,8 @@ function main() {
 
 
 
+
+//this is suspected not to be working
 function addClass(textDecision){
     for(var i=0;i<elements.length;i++){
         var node = document.getElementsByTagName(elements[i]);
@@ -86,9 +91,11 @@ function addClass(textDecision){
 }
 
 // adds the css page to the target webpage and replaces it
-function changeCSS(cssFile, cssLinkIndex) {
+// this has been verified as working
+function changeCSS(cssLinkIndex) {
     var newlink = document.createElement("link");
     newlink.setAttribute("rel", "stylesheet");
     newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("href", cssFile);
+    newlink.setAttribute("href", chrome.runtime.getURL('/style.css'));
+    document.getElementsByTagName("head").item(cssLinkIndex).appendChild(newlink);
 }
