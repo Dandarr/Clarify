@@ -11,8 +11,6 @@ window.addEventListener('DOMContentLoaded', changeCSS());
 //i'm pretty sure this is working but not sure how to verify it
 // gets the document url of the currently active chrome tab
 function main() {
-    //an array of most commonly used HTML elements
-    var elements = document.getElementsByTagName('html');
     console.log("currently selected elements are: " + elements);
     /*
     //create element style
@@ -51,45 +49,61 @@ function main() {
             //catch all error message
               console.log("unable to specify font selection");
           }
-        
     }
-
-    
-    //this is suspected not to be working
-    function addClass(textDecision){
-        for(var i = 0; i < elements.length; i++){
-            var node = document.getElementsByTagName(elements[i]);
-            for(var y = 0; y < node.length; y++){
-                node[y].classList.add(textDecision);
-                console.log("font changed");
-        }
-    }
-    }
-    /*
-    function addClass(textDecision){
-        const rootElement = document.documentElement;
-        rootElement.classList.add(textDecision);
-    }
-
-
-
-    function addClass(textDecision){
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements[i];
-            for (var j = 0; j < element.childNodes.length; j++) {
-                var node = element.childNodes[j];
-                node[j].classList.add(textDecision);
-                console.log("font changed");
-            }
-        }
-    }
-    */
-
 
     //init
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded Main");
 }
+
+// this should select the currently in use chrome tab and set it to currentTab
+let currentTab;
+chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
+function(tabs){
+getCurrentURL(tabs[0].url);});
+function getCurrentURL(tab){
+    currentTab = tab;
+}
+
+    //this defines elements for my addClass function
+    /* 
+    'html' doesnt work
+    '*' doesnt work
+    'root' doesnt work
+    */
+var elements = currentTab.getElementsByTagName('html');
+
+    //this is suspected not to be working
+/*    
+function addClass(textDecision){
+    for(var i = 0; i < elements.length; i++){
+        var node = document.getElementsByTagName(elements[i]);
+        for(var y = 0; y < node.length; y++){
+            node[y].classList.add(textDecision);
+            console.log("font changed");
+        }
+    }
+}
+*/
+    /*
+    function addClass(textDecision){
+        const rootElement = document.documentElement;
+        rootElement.classList.add(textDecision);
+    }
+*/
+
+function addClass(textDecision){
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        for (var j = 0; j < element.childNodes.length; j++) {
+            var node = element.childNodes[j];
+            node[j].classList.add(textDecision);
+            console.log("font changed");
+        }
+    }
+}
+
+
 
 // adds the css page to the target webpage and replaces it
 // this has been verified as working
