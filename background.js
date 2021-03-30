@@ -2,21 +2,17 @@ window.addEventListener('DOMContentLoaded', main);
 window.addEventListener('DOMContentLoaded', changeCSS());
 
 
+
+//CSS file definintley arrives at page
+//CSS changes will work when called
+//text replace definitley parses the correct text input to addClass
+
+
 //i'm pretty sure this is working but not sure how to verify it
 // gets the document url of the currently active chrome tab
-var currentTab;
-chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
-function(tabs){
-getCurrentURL(tabs[0].url);
-});
-function getCurrentURL(tab){
-    currentTab = tab;
-}   
-let elements = [];
-
 function main() {
     //an array of most commonly used HTML elements
-    let elements = document.getElementsByTagName('*');
+    var elements = document.getElementsByTagName('*');
     console.log("currently selected elements are: " + elements);
     /*
     //create element style

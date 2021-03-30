@@ -3,7 +3,14 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
   // this should select the currently in use chrome tab and set it to currentTab
-    let currentTab =  chrome.tabs.query({ currentWindow: true, active: true });
+  let currentTab;
+  chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
+  function(tabs){
+  getCurrentURL(tabs[0].url);
+  });
+  function getCurrentURL(tab){
+      currentTab = tab;
+  }   
 
     //an array of most commonly used HTML elements
     var types = new Array("textarea","input","div","h1","h2","h3","span","p","li","a");    

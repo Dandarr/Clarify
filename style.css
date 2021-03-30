@@ -1,16 +1,18 @@
-@font-face { 
-    font-family: roboto; src: url(chrome.runtime.getURL('/fonts/Roboto-Regular.ttf');
-};
+style{
+    visibility: hidden !important;
+}
 
 .roboto{
-    font-family: "roboto" !important;
-    text-align: left !important;
-    color: #000000 !important;
-    line-height: 1.40;
-    font-size: small;
-    background-color: #F1F1F1 !important;
-  }
-  
+    @font-face {
+        font-family: "roboto" !important;
+        text-align: left !important;
+        color: #000000 !important;
+        line-height: 1.40;
+        font-size: small;
+        background-color: #F1F1F1 !important;
+        src: url(chrome.runtime.getURL('/fonts/Roboto-Regular.ttf'));
+     }
+    }
 a .roboto{
     font-family: "roboto" !important;
     text-align: left !important;
