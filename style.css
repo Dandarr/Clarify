@@ -1,3 +1,10 @@
+.popup{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline;
+}
+
 style{
     visibility: hidden !important;
     display: none;
@@ -57,13 +64,6 @@ a .portLilgat{
     line-height: 1.40;
     font-size: small;
     background-color: #F1F1F1 !important;
-}
-
-*{
-margin: 0;
-border: 0;
-padding: 0;
-display: inline;
 }
 
 .profiles{
