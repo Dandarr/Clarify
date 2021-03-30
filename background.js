@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', main);
 window.addEventListener('DOMContentLoaded', changeCSS());
 
 
+//i'm pretty sure this is working but not sure how to verify it
 // gets the document url of the currently active chrome tab
 var currentTab;
 chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
@@ -11,26 +12,27 @@ getCurrentURL(tabs[0].url);
 function getCurrentURL(tab){
     currentTab = tab;
 }   
-
+let elements = [];
 
 function main() {
     //an array of most commonly used HTML elements
-    var elements = document.getElementsByTagName('*');
-/*
+    let elements = document.getElementsByTagName('*');
+    console.log("currently selected elements are: " + elements);
+    /*
     //create element style
     var style = currentTab.createElement ("style");
     // style.type = "text/css";
     // dont need to add the .type as it is redundant since style only has one type
-*/
+    */
 
-//this is definitley working
+    //this is definitley working
     function textReplace(){
         //figures out what option is selected
         var textSel = document.getElementById('typeSelect'); 
         var textVal = textSel.value;
         console.log("selected font value is = " + textVal);
 
-        //Action based on option
+        //Action based on dropdown selection
         if (textVal == "0"){
             console.log(textVal);
             console.log('changing font to Roboto');
@@ -57,19 +59,25 @@ function main() {
     }
 
 
+    function addClass(textDecision){
+        const rootElement = document.documentElement;
+        rootElement.classList.add(textDecision);
+    }
 
 
-//this is suspected not to be working
-function addClass(textDecision){
-    for(var i=0;i<elements.length;i++){
-        var node = document.getElementsByTagName(elements[i]);
-        for(var y=0;y<node.length;y++){
-            node[y].classList.add(textDecision);
-            console.log("font changed");
+
+    /*
+    //this is suspected not to be working
+    function addClass(textDecision){
+        for(var i=0;i<elements.length;i++){
+            var node = document.getElementsByTagName(elements[i]);
+            for(var y=0;y<node.length;y++){
+                node[y].classList.add(textDecision);
+                console.log("font changed");
         }
     }
-}
-/*
+    }
+
     // adds the classes i want to the target webpage from my css
     function addClass(textDecision){
         for (var i = 0; i < elements.length; i++) {
@@ -82,10 +90,10 @@ function addClass(textDecision){
             }
         }
     }
-*/
+    */
 
 
-//init
+    //init
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded");
 }
