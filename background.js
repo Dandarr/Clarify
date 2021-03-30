@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', changeCSS());
 // gets the document url of the currently active chrome tab
 function main() {
     //an array of most commonly used HTML elements
-    var elements = document.getElementsByTagName('*');
+    var elements = document.getElementsByTagName('html');
     console.log("currently selected elements are: " + elements);
     /*
     //create element style
@@ -54,7 +54,18 @@ function main() {
         
     }
 
-
+    
+    //this is suspected not to be working
+    function addClass(textDecision){
+        for(var i = 0; i < elements.length; i++){
+            var node = document.getElementsByTagName(elements[i]);
+            for(var y = 0; y < node.length; y++){
+                node[y].classList.add(textDecision);
+                console.log("font changed");
+        }
+    }
+    }
+    /*
     function addClass(textDecision){
         const rootElement = document.documentElement;
         rootElement.classList.add(textDecision);
@@ -62,27 +73,13 @@ function main() {
 
 
 
-    /*
-    //this is suspected not to be working
-    function addClass(textDecision){
-        for(var i=0;i<elements.length;i++){
-            var node = document.getElementsByTagName(elements[i]);
-            for(var y=0;y<node.length;y++){
-                node[y].classList.add(textDecision);
-                console.log("font changed");
-        }
-    }
-    }
-
-    // adds the classes i want to the target webpage from my css
     function addClass(textDecision){
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
             for (var j = 0; j < element.childNodes.length; j++) {
                 var node = element.childNodes[j];
-                // this adds the class to the matching elements for font style based off textDecision
-                // i need to add into text replace the class that wants adding
                 node[j].classList.add(textDecision);
+                console.log("font changed");
             }
         }
     }
@@ -91,7 +88,7 @@ function main() {
 
     //init
     document.getElementById('send').addEventListener('click', textReplace);
-    console.log("Loaded");
+    console.log("Loaded Main");
 }
 
 // adds the css page to the target webpage and replaces it
@@ -102,4 +99,5 @@ function changeCSS(cssLinkIndex) {
     newlink.setAttribute("type", "text/css");
     newlink.setAttribute("href", chrome.runtime.getURL('/style.css'));
     document.getElementsByTagName("head").item(cssLinkIndex).appendChild(newlink);
+    console.log("linked stylesheet");
 }

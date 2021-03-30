@@ -1,5 +1,6 @@
 style{
     visibility: hidden !important;
+    display: none;
 }
 
 .roboto{
