@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', main);
 window.addEventListener('DOMContentLoaded', changeCSS());
 
 
-
+var elements = new Array("textarea","input","div","h1","h2","h3","span","p","li","a");
 //CSS file definintley arrives at page
 //CSS changes will work when called
 //text replace definitley parses the correct text input to addClass
@@ -55,7 +55,14 @@ function main() {
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded Main");
 }
+    //this defines elements for my addClass function
+    /* 
+    'html' doesnt work
+    '*' doesnt work
+    'root' doesnt work
+    */
 
+/*
 // this should select the currently in use chrome tab and set it to currentTab
 let currentTab;
 chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT}, 
@@ -65,33 +72,34 @@ function getCurrentURL(tab){
     currentTab = tab;
 }
 
-    //this defines elements for my addClass function
-    /* 
-    'html' doesnt work
-    '*' doesnt work
-    'root' doesnt work
-    */
-var elements = currentTab.getElementsByTagName('html');
+*/
 
+    window.addEventListener('DOMContentLoaded', async () => {
+    let tab = chrome.tabs.query({ active: true, currentWindow: true });
+    console.log("currently active tab url is: " + tab.url);
+          addClass(tab.url);
+        });
     //this is suspected not to be working
-/*    
-function addClass(textDecision){
+
+function addClass(textDecision, tab){
     for(var i = 0; i < elements.length; i++){
-        var node = document.getElementsByTagName(elements[i]);
+        var node = tab.getElementsByTagName(elements[i]);
         for(var y = 0; y < node.length; y++){
             node[y].classList.add(textDecision);
             console.log("font changed");
         }
     }
 }
-*/
-    /*
+
+
+/*
     function addClass(textDecision){
         const rootElement = document.documentElement;
         rootElement.classList.add(textDecision);
     }
 */
 
+/*
 function addClass(textDecision){
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
@@ -102,7 +110,7 @@ function addClass(textDecision){
         }
     }
 }
-
+*/
 
 
 // adds the css page to the target webpage and replaces it

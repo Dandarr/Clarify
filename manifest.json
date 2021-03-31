@@ -2,6 +2,7 @@
     "name": "Clarify",
     "version": "1.0",
     "description": "A browser extension designed to make the browser more dyslexia friendly",
+    "permissions": ["storage", "activeTab", "scripting"],
     "manifest_version": 2,
     "author": "Thomas Smith",
     "browser_action": {
