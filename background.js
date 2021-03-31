@@ -55,12 +55,6 @@ function main() {
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded Main");
 }
-    //this defines elements for my addClass function
-    /* 
-    'html' doesnt work
-    '*' doesnt work
-    'root' doesnt work
-    */
 
 /*
 // this should select the currently in use chrome tab and set it to currentTab
@@ -74,44 +68,20 @@ function getCurrentURL(tab){
 
 */
 
-    window.addEventListener('DOMContentLoaded', async () => {
-    let tab = chrome.tabs.query({ active: true, currentWindow: true });
-    console.log("currently active tab url is: " + tab.url);
-          addClass(tab.url);
-        });
-    //this is suspected not to be working
+chrome.browserAction.onClicked.addListener(function (tab) {
+        chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, addClass);
+});
+
 
 function addClass(textDecision, tab){
     for(var i = 0; i < elements.length; i++){
-        var node = tab.getElementsByTagName(elements[i]);
+        var node = document.getElementsByTagName(elements[i]);
         for(var y = 0; y < node.length; y++){
             node[y].classList.add(textDecision);
             console.log("font changed");
         }
     }
 }
-
-
-/*
-    function addClass(textDecision){
-        const rootElement = document.documentElement;
-        rootElement.classList.add(textDecision);
-    }
-*/
-
-/*
-function addClass(textDecision){
-    for (var i = 0; i < elements.length; i++) {
-        var element = elements[i];
-        for (var j = 0; j < element.childNodes.length; j++) {
-            var node = element.childNodes[j];
-            node[j].classList.add(textDecision);
-            console.log("font changed");
-        }
-    }
-}
-*/
-
 
 // adds the css page to the target webpage and replaces it
 // this has been verified as working
