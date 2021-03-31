@@ -30,19 +30,19 @@ function main() {
         if (textVal == "0"){
             console.log(textVal);
             console.log('changing font to Roboto');
-            addClass('roboto');
+            doStuffWithDom('roboto');
           }
 
           else if (textVal == "1"){
               console.log(textVal);
               console.log('changing font to Port Lilgat');
-              addClass('portLilgat');
+              modifyDOM('portLilgat');
           }
 
           else if (textVal == "2"){
               console.log(textVal);
               console.log('changing font to Abel');
-              addClass('abel');
+              modifyDOM('abel');
           }
 
           else{
@@ -54,7 +54,7 @@ function main() {
     //init
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded Main");
-}
+
 
 /*
 // this should select the currently in use chrome tab and set it to currentTab
@@ -67,21 +67,29 @@ function getCurrentURL(tab){
 }
 
 */
-
-chrome.browserAction.onClicked.addListener(function (tab) {
-        chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, addClass);
-});
+}
 
 
-function addClass(textDecision, tab){
+// A function to use as callback
+function doStuffWithDom(domContent, textDecision) {
+    console.log('I received the following DOM content:\n' + domContent);
     for(var i = 0; i < elements.length; i++){
         var node = document.getElementsByTagName(elements[i]);
         for(var y = 0; y < node.length; y++){
-            node[y].classList.add(textDecision);
-            console.log("font changed");
+             node[y].classList.add(textDecision);
+             console.log("font changed");
         }
     }
 }
+
+// When the browser-action button is clicked...
+chrome.browserAction.onClicked.addListener(function (tab) {
+        // ...if it matches, send a message specifying a callback too
+    chrome.tabs.sendMessage(tab.id, {text: 'report_back'}, doStuffWithDom);
+});
+
+
+
 
 // adds the css page to the target webpage and replaces it
 // this has been verified as working
