@@ -9,12 +9,6 @@ window.addEventListener('DOMContentLoaded', main);
 //i'm pretty sure this is working but not sure how to verify it
 // gets the document url of the currently active chrome tab
 function main() {
-    /*
-    //create element style
-    var style = currentTab.createElement ("style");
-    // style.type = "text/css";
-    // dont need to add the .type as it is redundant since style only has one type
-    */
 
     //this is definitley working
     function textReplace(){

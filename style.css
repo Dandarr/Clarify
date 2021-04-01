@@ -10,19 +10,19 @@ style{
     display: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Port+Lligat+Sans&family=Roboto&display=swap');
+
 .roboto{
-    @font-face {
-        font-family: "roboto" !important;
-        text-align: left !important;
-        color: #000000 !important;
-        line-height: 1.40;
-        font-size: small;
-        background-color: #F1F1F1 !important;
-        src: url(chrome.runtime.getURL('/fonts/Roboto-Regular.ttf'));
-     }
-    }
+    font-family: 'Roboto', sans-serif !important;
+    text-align: left !important;
+    color: #000000 !important;
+    line-height: 1.40;
+    font-size: small;
+    background-color: #F1F1F1 !important;
+}
+
 a .roboto{
-    font-family: "roboto" !important;
+    font-family: 'Roboto', sans-serif !important;
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
@@ -31,7 +31,7 @@ a .roboto{
 }
 
 .abel{
-    font-family: "abel" !important;
+    font-family: 'Abel', sans-serif !important;
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
@@ -40,7 +40,7 @@ a .roboto{
 }
 
 a .abel{
-    font-family: "abel" !important;
+    font-family: 'Abel', sans-serif !important;
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
@@ -49,7 +49,7 @@ a .abel{
 }
 
 .portLilgat{
-    font-family: "portLilgat" !important;
+    font-family: 'Port Lligat Sans', sans-serif !important;
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
@@ -58,7 +58,7 @@ a .abel{
 }
 
 a .portLilgat{
-    font-family: "portLilgat" !important;
+    font-family: 'Port Lligat Sans', sans-serif !important;
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
