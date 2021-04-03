@@ -20,3 +20,4 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     document.documentElement.classList.add(msg.classSelect);
     sendResponse({});
 });
+

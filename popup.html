@@ -11,10 +11,27 @@
       <label for="powerID">Enabled/Disable</label>
     </div>
     <select name="typeface" id="typeSelect" class="typeDrop popup">
-      <option value="0">Roboto</option>
-      <option value="1">Port Lligat Sans</option>
       <option value="2">Abel</option>
+      <option value="1">Port Lligat Sans</option>
+      <option value="0">Roboto</option>
+      <option value="3">Font</option>
+      <option value="4">Font</option>
+      <option value="5">Font</option>
+      <option value="6">Font</option>
     </select>
+    <div>
+      <input type="range" id="spacing" name="spacing"
+             min="0" max="11">
+      <label for="spacing">Text Spacing</label>
+      <label for="spacing" id ="spacingDisplay"></label>
+    </div>
+    <div>
+      <input type="range" id="size" name="size"
+             min="8" max="32">
+      <label for="size">Text Size</label>
+      <label for="size" id ="sizeDisplay"></label>
+    </div>
+
     <button id='send'>submit</button>
 
     <div class="profiles popup">

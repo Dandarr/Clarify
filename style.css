@@ -108,3 +108,18 @@ border: black solid 1px;
 border-radius: 5px;
 font-weight: bold;
 }
+
+#sizeDisplay{
+    border-bottom: 10px;
+    display: inline;
+}
+
+#send{
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#powerID{
+    margin-bottom: 10%;
+}

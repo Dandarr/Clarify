@@ -5,9 +5,6 @@ window.addEventListener('DOMContentLoaded', main);
 //CSS changes will work when called
 //text replace definitley parses the correct text input to addClass
 
-
-//i'm pretty sure this is working but not sure how to verify it
-// gets the document url of the currently active chrome tab
 function main() {
 
     //this is definitley working
@@ -16,6 +13,18 @@ function main() {
         var textSel = document.getElementById('typeSelect'); 
         var textVal = textSel.value;
         console.log("selected font value is = " + textVal);
+
+        //----not currently working but doesn't break anything------
+        //clear any exsisting Extension classes from target webpage
+        var elements = document.getElementsByTagName("*");
+        console.log(elements);
+        for(var node of elements){
+            console.log(node);
+            // add all classes here so that they can be wiped before a new class is applied
+            node.classList.remove("roboto", "portLilgat", "abel");
+        }
+        //--------------------------------------------------------
+
 
         //Action based on dropdown selection
         if (textVal == "0"){
@@ -44,6 +53,21 @@ function main() {
     //init
     document.getElementById('send').addEventListener('click', textReplace);
     console.log("Loaded Main");
+
+
+    //initilasises the displays for the text size and spacing slidersS
+    const sizeElement = document.getElementById('size');
+    sizeElement.addEventListener('change', (event) => {
+        const sizeResult = document.getElementById("sizeDisplay");
+        sizeResult.textContent = event.target.value + 'px';
+    });
+
+     const spacingElement = document.getElementById('spacing');
+     spacingElement.addEventListener('change', (event) => {
+         const spacingResult = document.getElementById("spacingDisplay");
+         spacingResult.textContent = event.target.value + 'px';
+    });
+
 }
 
 
@@ -65,3 +89,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		response: "Message Received",
 	});
 });
+
