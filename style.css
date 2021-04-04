@@ -116,10 +116,20 @@ font-weight: bold;
 
 #send{
     position: relative;
-    margin-top: 10%;
-    margin-bottom: 10%;
+   margin-top: 10%;
+    margin-bottom: 10%; 
 }
 
 #powerID{
     margin-bottom: 10%;
+}
+
+.background_colour{
+    margin-bottom: 10%;
+
+}
+
+.backgorund_colour_popup{
+    margin-top: 5%;
+    margin-bottom: 10;
 }

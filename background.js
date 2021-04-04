@@ -13,19 +13,6 @@ function main() {
         var textSel = document.getElementById('typeSelect'); 
         var textVal = textSel.value;
         console.log("selected font value is = " + textVal);
-
-        //----not currently working but doesn't break anything------
-        //clear any exsisting Extension classes from target webpage
-        var elements = document.getElementsByTagName("*");
-        console.log(elements);
-        for(var node of elements){
-            console.log(node);
-            // add all classes here so that they can be wiped before a new class is applied
-            node.classList.remove("roboto", "portLilgat", "abel");
-        }
-        //--------------------------------------------------------
-
-
         //Action based on dropdown selection
         if (textVal == "0"){
             console.log(textVal);
@@ -50,24 +37,45 @@ function main() {
               console.log("unable to specify font selection");
           }
     }
-    //init
+
+    function sizeConfig(){
+        const sizeResult = document.getElementById("sizeDisplay");
+
+        sendMessage('textsize');
+    }
+
+    function spacingConfig(){
+        const spacingElement = document.getElementById('spacing');
+    }
+
+    function backColourConfig(){
+
+    }
+
+    function textColourConfig(){
+
+    }
+    //initialises functions in main through buttons
     document.getElementById('send').addEventListener('click', textReplace);
-    console.log("Loaded Main");
-
-
-    //initilasises the displays for the text size and spacing slidersS
+    document.getElementById('send').addEventListener('click,', sizeConfig);
+    document.getElementById('send').addEventListener('click,', spacingConfig);
+    document.getElementById('send').addEventListener('click,', backColourConfig);
+    document.getElementById('send').addEventListener('click,', textColourConfig);
+    console.log('functions initialised');
+    //initilasises the displays for the text
     const sizeElement = document.getElementById('size');
     sizeElement.addEventListener('change', (event) => {
         const sizeResult = document.getElementById("sizeDisplay");
         sizeResult.textContent = event.target.value + 'px';
     });
-
+    //initilasises the displays for spacing sliders
      const spacingElement = document.getElementById('spacing');
      spacingElement.addEventListener('change', (event) => {
          const spacingResult = document.getElementById("spacingDisplay");
          spacingResult.textContent = event.target.value + 'px';
     });
-
+    console.log('Displays initialised');
+    console.log("Loaded Main");
 }
 
 
