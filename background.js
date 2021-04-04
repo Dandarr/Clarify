@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', main);
 
-
+const textSizes = [8, 10, 12, 16, 24, 32];
+const textSpacings = [1, 2, 4, 8]
 //CSS file definintley arrives at page
 //CSS changes will work when called
 //text replace definitley parses the correct text input to addClass
@@ -38,14 +39,18 @@ function main() {
           }
     }
 
-    function sizeConfig(){
-        const sizeResult = document.getElementById("sizeDisplay");
-
-        sendMessage('textsize');
+    function sizeConfig(size){
+        let sizeDecision = textSizes[size]
+        let message = 'ts'+ sizeDecision
+        console.log('the text size selected was' + message)
+        sendMessage(message);
     }
 
-    function spacingConfig(){
-        const spacingElement = document.getElementById('spacing');
+    function spacingConfig(spacing){
+        let spaceDecision = textSpacings[spacing]
+        let message = 'ts'+ spaceDecision
+        console.log('the text size selected was' + message)
+        sendMessage(message);
     }
 
     function backColourConfig(){
@@ -55,6 +60,24 @@ function main() {
     function textColourConfig(){
 
     }
+    //INITs
+     //initilasises the displays for the text and parses info to sizeConfig
+     const sizeElement = document.getElementById('size');
+     sizeElement.addEventListener('change', (event) => {
+         const sizeResult = document.getElementById("sizeDisplay");
+         sizeResult.textContent = textSizes[event.target.value] + 'px';
+         let size = event.target.value;
+         spacingConfig(size);
+     });
+     //initilasises the displays for spacing sliders and parses info to SpacingConfig
+     const spacingElement = document.getElementById('spacing');
+     spacingElement.addEventListener('change', (event) => {
+          const spacingResult = document.getElementById("spacingDisplay");
+          spacingResult.textContent = textSpacings[event.target.value] + 'px';
+          let spacing = event.target.value;
+          spacingConfig(spacing);
+     });
+     console.log('Displays initialised');
     //initialises functions in main through buttons
     document.getElementById('send').addEventListener('click', textReplace);
     document.getElementById('send').addEventListener('click,', sizeConfig);
@@ -62,19 +85,7 @@ function main() {
     document.getElementById('send').addEventListener('click,', backColourConfig);
     document.getElementById('send').addEventListener('click,', textColourConfig);
     console.log('functions initialised');
-    //initilasises the displays for the text
-    const sizeElement = document.getElementById('size');
-    sizeElement.addEventListener('change', (event) => {
-        const sizeResult = document.getElementById("sizeDisplay");
-        sizeResult.textContent = event.target.value + 'px';
-    });
-    //initilasises the displays for spacing sliders
-     const spacingElement = document.getElementById('spacing');
-     spacingElement.addEventListener('change', (event) => {
-         const spacingResult = document.getElementById("spacingDisplay");
-         spacingResult.textContent = event.target.value + 'px';
-    });
-    console.log('Displays initialised');
+
     console.log("Loaded Main");
 }
 
