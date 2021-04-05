@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', main);
 
 const textSizes = [8, 10, 12, 16, 24, 32];
-const textSpacings = [1, 2, 4, 8]
+const textSpacings = ['tight', 'normal', 'wide', 'wider'];
 //CSS file definintley arrives at page
 //CSS changes will work when called
 //text replace definitley parses the correct text input to addClass
@@ -40,16 +40,16 @@ function main() {
     }
 
     function sizeConfig(size){
-        let sizeDecision = textSizes[size]
-        let message = 'ts'+ sizeDecision
-        console.log('the text size selected was' + message)
+        let sizeDecision = textSizes[size];
+        let message = 'ts'+ sizeDecision;
+        console.log('the text size selected was: ' + 'ts' + message);
         sendMessage(message);
     }
 
     function spacingConfig(spacing){
-        let spaceDecision = textSpacings[spacing]
-        let message = 'ts'+ spaceDecision
-        console.log('the text size selected was' + message)
+        let spaceDecision = textSpacings[spacing];
+        let message = 'ts'+ spaceDecision;
+        console.log('the text size selected was: ' + message);
         sendMessage(message);
     }
 
@@ -73,7 +73,7 @@ function main() {
      const spacingElement = document.getElementById('spacing');
      spacingElement.addEventListener('change', (event) => {
           const spacingResult = document.getElementById("spacingDisplay");
-          spacingResult.textContent = textSpacings[event.target.value] + 'px';
+          spacingResult.textContent = textSpacings[event.target.value];
           let spacing = event.target.value;
           spacingConfig(spacing);
      });

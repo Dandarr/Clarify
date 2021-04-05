@@ -10,7 +10,7 @@
              checked>
       <label for="powerID">Enabled/Disable</label>
     </div>
-    <select name="typeface" id="typeSelect" class="typeDrop popup">
+    <select name="typeface" id="typeSelect" class="popup">
       <option value="2">Abel</option>
       <option value="1">Port Lligat Sans</option>
       <option value="0">Roboto</option>
@@ -19,22 +19,22 @@
       <option value="5">Font</option>
       <option value="6">Font</option>
     </select>
-    <div>
+    <div class =  "spacingDiv">
       <input type="range" id="spacing" name="spacing"
              min="0" max="3">
       <label for="spacing">Text Spacing</label>
       <label for="spacing" id ="spacingDisplay"></label>
     </div>
-    <div>
+    <div class = "sizeDiv">
       <input type="range" id="size" name="size"
              min="0" max="5">
       <label for="size">Text Size</label>
       <label for="size" id ="sizeDisplay"></label>
     </div>
 
-    <div class="backgorund_colour_popup popup">
+    <div class="popup">
       <label class = "background_colour" >Background Colour</label>
-      <select name="back_colour" id="typeSelect" class="background_colour">
+      <select name="back_colour" id="typeSelect" class="background_colour popup">
         <option value="#28282E">Dark Grey</option>
         <option value="#EDEDFF">Frost</option>
         <option value="#FFFFFF">White</option>
@@ -50,8 +50,6 @@
       <button id="preset4">A</button>
       <button id="preset5">+</button>
     </div>
-
-    
     <button id='send'>submit</button>
   </body>
 </html>

@@ -1,3 +1,16 @@
+/*Table of Contents
+----Extensions CSS------
+- Classes and IDs that are needed for the extension popup
+- Classes and IDs needed for hiding style elements from target webpage
+----Functionailty CSS----
+- importing of fonts
+- fonts
+- text sizing
+- text spacing
+- background colour
+- text colour
+*/
+
 .popup{
     margin: 0;
     border: 0;
@@ -5,6 +18,79 @@
     display: inline;
 }
 
+.profiles{
+    display: block;
+}
+    
+#preset1{
+    background-color: bisque;
+    color: black;
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+    
+#preset2{
+    background-color: black;
+    color: mintcream;
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+
+#preset3{
+    background-color: rgb(199, 223, 253);
+    color: rgb(52, 52, 56);
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+
+#preset4{
+    background-color: mintcream;
+    color: black;
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+}
+
+#preset5{
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#sizeDisplay{
+    margin-bottom: 10%;
+    display: inline;
+}
+
+.spacingDiv{
+    margin-top: 1em;
+}
+.sizeDiv{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+    
+#send{
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    width: 97%;
+}
+
+#powerID{
+    margin-bottom: 10%;
+}
+    
+.background_colour{
+    margin-bottom: 10%;
+    width: 85%
+    
+}
+    
 style{
     visibility: hidden !important;
     display: none;
@@ -17,7 +103,6 @@ style{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
 }
 
@@ -26,7 +111,6 @@ a .roboto{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
 }
 
@@ -35,7 +119,6 @@ a .roboto{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
 }
 
@@ -44,7 +127,6 @@ a .abel{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
 }
 
@@ -53,7 +135,6 @@ a .abel{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
 }
 
@@ -62,76 +143,7 @@ a .portLilgat{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    font-size: small;
     background-color: #F1F1F1 !important;
-}
-
-.profiles{
-display: block;
-}
-
-#preset1{
-background-color: bisque;
-color: black;
-width: 17%;
-border: black solid 1px;
-border-radius: 5px;
-}
-
-#preset2{
-background-color: black;
-color: mintcream;
-width: 17%;
-border: black solid 1px;
-border-radius: 5px;
-}
-
-#preset3{
-background-color: rgb(199, 223, 253);
-color: rgb(52, 52, 56);
-width: 17%;
-border: black solid 1px;
-border-radius: 5px;
-}
-
-#preset4{
-background-color: mintcream;
-color: black;
-width: 17%;
-border: black solid 1px;
-border-radius: 5px;
-}
-
-#preset5{
-width: 17%;
-border: black solid 1px;
-border-radius: 5px;
-font-weight: bold;
-}
-
-#sizeDisplay{
-    border-bottom: 10px;
-    display: inline;
-}
-
-#send{
-    position: relative;
-   margin-top: 10%;
-    margin-bottom: 10%; 
-}
-
-#powerID{
-    margin-bottom: 10%;
-}
-
-.background_colour{
-    margin-bottom: 10%;
-
-}
-
-.backgorund_colour_popup{
-    margin-top: 5%;
-    margin-bottom: 10;
 }
 
 .ts8{
@@ -158,3 +170,15 @@ font-weight: bold;
     font-size: 32px !important;
 }
 
+.tstight {
+    letter-spacing: -0.05em !important;
+}
+.tsnormal{
+    letter-spacing: normal !important;
+}
+.tswide{
+    letter-spacing: 6px !important;
+}
+.tswider{
+    letter-spacing: 1em !important;
+}
