@@ -1,14 +1,25 @@
+/*
+Ok so basically the way this works is:
+ - main is initialised on DOM content of the popup loading
+ - When submit button is hit it fires all the functions in main
+ - each function makes a decision on what class it should send based on it's input method:
+    - text replaced based on if statment for dropdown menu
+    - size and spacing is figured from a slider which indicates an array value that then constructs the name of the correct class
+    - colour scheme is based off of radio buttons and parses that value onwards
+- these classnames then get parsed to the sendMessage function which parses the information to the content script where the target webpages DOM has been selected. 
+- this then applies the classes to every element and each of its nodes in the target DOM.
+*/
+
+
+//init main
 window.addEventListener('DOMContentLoaded', main);
 
+//initialises the arrays for text spacing and text sizes functions
 const textSizes = [8, 10, 12, 16, 24, 32];
 const textSpacings = ['tight', 'normal', 'wide', 'wider'];
-//CSS file definintley arrives at page
-//CSS changes will work when called
-//text replace definitley parses the correct text input to addClass
 
 function main() {
-
-    //this is definitley working
+    //font replacement function
     function textReplace(){
         //figures out what option is selected
         var textSel = document.getElementById('typeSelect'); 
@@ -39,6 +50,7 @@ function main() {
           }
     }
 
+    //configures text size based off of a slider
     function sizeConfig(size){
         let sizeDecision = textSizes[size];
         let message = 'ts'+ sizeDecision;
@@ -46,6 +58,7 @@ function main() {
         sendMessage(message);
     }
 
+    //configures the spacing between letters based on a slider
     function spacingConfig(spacing){
         let spaceDecision = textSpacings[spacing];
         let message = 'ts'+ spaceDecision;
@@ -53,13 +66,20 @@ function main() {
         sendMessage(message);
     }
 
-    function backColourConfig(){
-
+    //sets background and text colours based off of the radio buttons on the popup
+    function colourConfig(){
+        let radio = document.querySelectorAll('input[name="colourScheme"]');
+        let selectedValue;
+        for (const rb of radio) {
+            if (rb.checked) {
+                selectedValue = rb.value;
+                break;
+            }
+        }
+        console.log(selectedValue);
+        sendMessage(selectedValue);
     }
 
-    function textColourConfig(){
-
-    }
     //INITs
      //initilasises the displays for the text and parses info to sizeConfig
      const sizeElement = document.getElementById('size');
@@ -78,17 +98,15 @@ function main() {
           spacingConfig(spacing);
      });
      console.log('Displays initialised');
+
     //initialises functions in main through buttons
     document.getElementById('send').addEventListener('click', textReplace);
-    document.getElementById('send').addEventListener('click,', sizeConfig);
-    document.getElementById('send').addEventListener('click,', spacingConfig);
-    document.getElementById('send').addEventListener('click,', backColourConfig);
-    document.getElementById('send').addEventListener('click,', textColourConfig);
+    document.getElementById('send').addEventListener('click', sizeConfig);
+    document.getElementById('send').addEventListener('click', spacingConfig);
+    document.getElementById('send').addEventListener('click', colourConfig);
     console.log('functions initialised');
-
     console.log("Loaded Main");
 }
-
 
 function sendMessage(classy) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {

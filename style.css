@@ -22,40 +22,47 @@
     display: block;
 }
     
-#preset1{
-    background-color: bisque;
-    color: black;
+#preset2{
+    background-color: #28282E;
+    color: #EDEDFF;
     width: 17%;
     border: black solid 1px;
     border-radius: 5px;
+    font-weight: bold;
+    padding-right: 7px;
 }
     
-#preset2{
+#preset1{
     background-color: black;
     color: mintcream;
     width: 17%;
     border: black solid 1px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 #preset3{
-    background-color: rgb(199, 223, 253);
-    color: rgb(52, 52, 56);
-    width: 17%;
-    border: black solid 1px;
-    border-radius: 5px;
-}
-
-#preset4{
-    background-color: mintcream;
+    background-color: #EDEDFF;
     color: black;
     width: 17%;
     border: black solid 1px;
     border-radius: 5px;
+    font-weight: bold;
+    padding-right: 2px;
+}
+
+#preset4{
+    background-color: white;
+    color: black;
+    width: 17%;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 #preset5{
     width: 17%;
+    background-color: #FFFFF2;
     border: black solid 1px;
     border-radius: 5px;
     font-weight: bold;
@@ -87,7 +94,7 @@
     
 .background_colour{
     margin-bottom: 10%;
-    width: 85%
+    width: 100%
     
 }
     
@@ -103,7 +110,6 @@ style{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 a .roboto{
@@ -111,7 +117,6 @@ a .roboto{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 .abel{
@@ -119,7 +124,6 @@ a .roboto{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 a .abel{
@@ -127,7 +131,6 @@ a .abel{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 .portLilgat{
@@ -135,7 +138,6 @@ a .abel{
     text-align: left !important;
     color: #000000 !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 a .portLilgat{
@@ -143,7 +145,6 @@ a .portLilgat{
     text-align: left !important;
     color: #0000FF !important;
     line-height: 1.40;
-    background-color: #F1F1F1 !important;
 }
 
 .ts8{
@@ -181,4 +182,29 @@ a .portLilgat{
 }
 .tswider{
     letter-spacing: 1em !important;
+}
+
+.preset1{
+    background-color: black !important;
+    color: mintcream !important;
+}
+
+.preset2{
+    background-color: #28282E !important;
+    color: #EDEDFF !important;
+}
+    
+.preset3{
+    background-color: #EDEDFF !important;
+    color: black !important;
+}
+
+.preset4{
+    background-color: white !important;
+    color: black !important;
+}
+
+.preset5{
+    background-color: #FFFFF2 !important;
+    color: black !important;
 }

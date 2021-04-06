@@ -10,6 +10,8 @@
              checked>
       <label for="powerID">Enabled/Disable</label>
     </div>
+    <div>
+      <label>Typeface</label>
     <select name="typeface" id="typeSelect" class="popup">
       <option value="2">Abel</option>
       <option value="1">Port Lligat Sans</option>
@@ -19,6 +21,7 @@
       <option value="5">Font</option>
       <option value="6">Font</option>
     </select>
+  </div>
     <div class =  "spacingDiv">
       <input type="range" id="spacing" name="spacing"
              min="0" max="3">
@@ -31,25 +34,21 @@
       <label for="size">Text Size</label>
       <label for="size" id ="sizeDisplay"></label>
     </div>
-
-    <div class="popup">
-      <label class = "background_colour" >Background Colour</label>
-      <select name="back_colour" id="typeSelect" class="background_colour popup">
-        <option value="#28282E">Dark Grey</option>
-        <option value="#EDEDFF">Frost</option>
-        <option value="#FFFFFF">White</option>
-        <option value="#000000">Black</option>
-        <option value="#6AC1FF">Light Blue</option>
-      </select>   
-    </div>
-
-    <div class="profiles popup">
-      <button id="preset1">A</button>
-      <button id="preset2">A</button>
-      <button id="preset3">A</button>
-      <button id="preset4">A</button>
-      <button id="preset5">+</button>
-    </div>
+  <div>
+    <label class = "background_colour">Colour Scheme</label>
+  </div>
+    <form id="radio">
+      <input type="radio" value="preset1" name="colourScheme">
+      <label for="preset1" id="preset1">Black</label>
+      <input type="radio" value="preset2" name="colourScheme">
+      <label for="preset2" id="preset2">Grey </label>
+      <input type="radio" value="preset3" name="colourScheme">
+      <label for="preset3" id="preset3">Frost</label>
+      <input type="radio" value="preset4" name="colourScheme" checked>
+      <label for="preset4" id="preset4">White</label>
+      <input type="radio" value="preset5" name="colourScheme">
+      <label for="preset5" id="preset5">Ivory</label>
+    </form>
     <button id='send'>submit</button>
   </body>
 </html>
