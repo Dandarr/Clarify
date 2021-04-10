@@ -10,7 +10,7 @@
              checked>
       <label for="powerID">Enabled/Disable</label>
     </div>
-    <div>
+    <div aria-label="font selection dropdown">
       <label>Typeface</label>
     <select name="typeface" id="typeSelect" class="popup">
       <option value="2">Abel</option>
@@ -22,21 +22,21 @@
       <option value="6">Font</option>
     </select>
   </div>
-    <div class =  "spacingDiv">
-      <input type="range" id="spacing" name="spacing"
-             min="0" max="3">
+    <div class =  "spacingDiv" aria-label="sliding bar for selecting spacing size">
       <label for="spacing">Text Spacing</label>
       <label for="spacing" id ="spacingDisplay"></label>
+      <input type="range" id="spacing" name="spacing"
+             min="0" max="3">
     </div>
-    <div class = "sizeDiv">
-      <input type="range" id="size" name="size"
-             min="0" max="5">
+    <div class = "sizeDiv" aria-label="Sliding bar for selecting font size">
       <label for="size">Text Size</label>
       <label for="size" id ="sizeDisplay"></label>
+      <input type="range" id="size" name="size"
+             min="0" max="5">
     </div>
   <div>
     <label class = "background_colour">Colour Scheme</label>
-  </div>
+  </div aria-label="background and text colour selection">
     <form id="radio">
       <input type="radio" value="preset1" name="colourScheme">
       <label for="preset1" id="preset1">Black</label>
