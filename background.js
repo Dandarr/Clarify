@@ -52,9 +52,11 @@ function main() {
 
     //configures text size based off of a slider
     function sizeConfig(size){
+        //size is going wrong here
+        console.log(typeof size);
         let sizeDecision = textSizes[size];
         let message = 'ts'+ sizeDecision;
-        console.log('the text size selected was: ' + 'ts' + message);
+        console.log('the text size selected was: ' + message);
         sendMessage(message);
     }
 
@@ -86,8 +88,8 @@ function main() {
      sizeElement.addEventListener('change', (event) => {
          const sizeResult = document.getElementById("sizeDisplay");
          sizeResult.textContent = textSizes[event.target.value] + 'px';
-         let size = event.target.value;
-         spacingConfig(size);
+         let sizeX = sizeElement.value;
+         spacingConfig(sizeX);
      });
      //initilasises the displays for spacing sliders and parses info to SpacingConfig
      const spacingElement = document.getElementById('spacing');
@@ -98,6 +100,8 @@ function main() {
           spacingConfig(spacing);
      });
      console.log('Displays initialised');
+
+    
 
     //initialises functions in main through buttons
     document.getElementById('send').addEventListener('click', textReplace);
