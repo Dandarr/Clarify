@@ -14,5 +14,12 @@ Automatically formats webpages to become more dyslexia friendly. It does this by
 * a selection of premade profiles
 * a quick enable/disable button to turn the extension on/off
 
+# installation
+* Open chrome 
+* Goto extensions
+* Turn on developer mode
+* Select the load unpacked button
+* Locate target folder
+* Load file
 
 
