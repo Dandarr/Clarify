@@ -15,7 +15,7 @@ Automatically formats webpages to become more dyslexia friendly. It does this by
 
 # installation
 * Open chrome 
-* Goto extensions
+* Goto extensions ( chrome://extensions/ )
 * Turn on developer mode
 * Select the load unpacked button
 * Locate target folder
